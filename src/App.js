@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const Shopingcart = [
+    { id: 3, item: "bread", cost: 30 },
+    { id: 1, item: "milk", cost: 22 },
+    { id: 2, item: "curd", cost: 10 },
+  ];
+
+  const data = Shopingcart.reduce((accumlater, currentvalue, indexof) => {
+    return (accumlater = currentvalue.item);
+  }, {});
+  console.log("datas", data);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>{data}</p>
     </div>
   );
 }
